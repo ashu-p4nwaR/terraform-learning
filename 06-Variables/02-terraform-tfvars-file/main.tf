@@ -7,3 +7,7 @@ resource "aws_instance" "initkloud_ec2_instance" {
   }
   availability_zone = var.deployment_region_az
 }
+
+
+# refer particular file 
+# terraform apply --auto-approve -var-file="web.tfvars"
