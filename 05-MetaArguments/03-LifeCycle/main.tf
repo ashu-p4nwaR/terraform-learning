@@ -9,7 +9,7 @@ resource "aws_instance" "initkloud_ec2_01" {
   availability_zone = "us-east-1a"
   # availability_zone = "us-east-1b"
   lifecycle {
-      create_before_create = true
+    create_before_create = true
   }
 }
 
@@ -24,7 +24,7 @@ resource "aws_instance" "initkloud_ec2_02" {
   availability_zone = "us-east-1a"
   # availability_zone = "us-east-1b"
   lifecycle {
-      prevent_destroy = true
+    prevent_destroy = true
   }
 }
 
@@ -39,9 +39,9 @@ resource "aws_instance" "initkloud_ec2_03" {
   availability_zone = "us-east-1a"
   # availability_zone = "us-east-1b"
   lifecycle {
-      ignore_changes = [
-          tags,
-      ]
+    ignore_changes = [
+      tags, # We can also use "all" to ignore prevent changes to attributes
+    ]
   }
 }
 
