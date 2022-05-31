@@ -66,3 +66,19 @@ resource "aws_security_group" "initkloud_public_web_sg" {
 # Overriding the variable using -var in CLI
 # COMMAND
 # terraform apply --auto-approve -var="ec2_instance_type=t2.micro" -var="ec2_instance_count=2"
+
+
+# Override variable using Environment variable
+# export TF_VAR_ec2_instance_type=t2.micro
+# export TF_VAR_ec2_instance_count=2
+# terraform apply --auto-approve 
+
+# unset variable
+# unset TF_VAR_ec2_instance_type
+# unset TF_VAR_ec2_instance_count
+
+# Generate a plan 
+# terraform plan -out out.plan ## out.plan is file name.
+
+# Create infra using plan file
+# terraform apply --auto-approve out.plan
