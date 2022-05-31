@@ -47,6 +47,8 @@ resource "aws_instance" "initkloud_ec2_03" {
 
 
 
+
+
 # COMMAND
 # terraform fmt
 # terraform validate && terraform plan
