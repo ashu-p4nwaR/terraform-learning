@@ -1,4 +1,4 @@
 provider "aws" {
-  region  = "us-east-1"
+  region  = var.deployment_region
   profile = "terraform-initkloud-dev"
 }
