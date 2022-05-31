@@ -14,7 +14,6 @@ resource "aws_instance" "initkloud_ec2" {
   ]
 }
 
-
 resource "aws_security_group" "initkloud_public_ssh_sg" {
   name        = "initkloud_public_ssh_sg"
   description = "Security group for HTTPD server for SSH."
@@ -63,3 +62,7 @@ resource "aws_security_group" "initkloud_public_web_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+# Overriding the variable using -var in CLI
+# COMMAND
+# terraform apply --auto-approve -var="ec2_instance_type=t2.micro" -var="ec2_instance_count=2"
